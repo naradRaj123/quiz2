@@ -21,7 +21,8 @@ function AllUsers() {
 
     const changestatus= async (user_id,status)=>{
         const formData={student_id:user_id,status} 
-        
+        setStatus(!actStatus)
+        console.log(status);
         await axios.post(`https://quiz-app-x6vq.onrender.com/studentStatusUpdate`,formData)
         .then((res)=>{
             console.log(res.data)
