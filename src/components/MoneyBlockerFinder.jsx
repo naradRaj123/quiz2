@@ -17,12 +17,12 @@ function AllUsers() {
 
 
     // change status of student
-    const [actStatus,setStatus]=useState(false)
+    
 
     const changestatus= async (user_id,status)=>{
-        const formData={student_id:user_id,status} 
-        setStatus(!actStatus)
-        console.log(status);
+        const statuss= !status;
+        const formData={student_id:user_id,status:statuss} 
+        console.log(statuss)
         await axios.post(`https://quiz-app-x6vq.onrender.com/studentStatusUpdate`,formData)
         .then((res)=>{
             console.log(res.data)
@@ -73,8 +73,8 @@ function AllUsers() {
                                                             <img src="/img/fraud.png" alt="User" className="w-24" />
                                                         </td>
                                                         <td className="border  border-gray-300 px-4 py-2 text-blue-600 font-bold cursor-pointer">
-                                                            <input type="hidden" value={actStatus} />
-                                                            <button onClick={()=>changestatus(v._id,actStatus)} >
+                                                            {/* <input type="hidden" value={v.active_status} onChange={}  /> */}
+                                                            <button onClick={()=>changestatus(v._id,v.active_status)} >
                                                             Update
                                                             </button>
                                                         </td>
