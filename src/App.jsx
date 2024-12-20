@@ -27,7 +27,7 @@ function App() {
             <Route path="addDefaulter" element={<AddDefaulter />} />
             <Route path="subscribe" element={<Subscribe />} />
             <Route path="profile" element={<Profile />} />
-            <Route path="editProfile" element={<EditProfile />} />
+            <Route path="editProfile/:user_id" element={<EditProfile />} />
             <Route path="allUser" element={<AllUsers />} />
             <Route path="addQuiz" element={<AddQuiz />} />
           </Route>

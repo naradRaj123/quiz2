@@ -74,12 +74,14 @@ function AllUsers() {
                                                         </td>
                                                         <td className="border  border-gray-300 px-4 py-2 text-blue-600 font-bold cursor-pointer">
                                                             {/* <input type="hidden" value={v.active_status} onChange={}  /> */}
-                                                            <button onClick={()=>changestatus(v._id,v.active_status)} >
+                                                            <button className="bg-red-500 rounded-lg text-white p-2 my-1 " onClick={()=>changestatus(v._id,v.active_status)} >
                                                             Update
                                                             </button>
+                                                         <Link to={`/overview/editProfile/${v._id}`}>   <button className="bg-black rounded-lg text-white p-2 my-1 ">Edit</button></Link>
                                                         </td>
                                                         <td className="border border-gray-300 px-4 py-2">
-                                                            {v.active_status  ? (<span class="p-2 bg-[green] text-white ">Active</span>) : ( <span class="p-2 bg-[red] text-white ">Deactive</span> )}
+                                                            {v.active_status  ? (<span class="p-2 bg-[green] rounded-md text-white ">Active</span>) : ( <span class="p-2 bg-[red] text-white rounded-md ">Deactive</span> )}
+                                                            
                                                         </td>
                                                     </tr>
                                                 </>
